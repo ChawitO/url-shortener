@@ -6,7 +6,7 @@ import axios from 'axios';
 function App() {
   const [longUrl, setLongUrl] = useState('')
   const [shortUrl, setShortUrl] = useState('')
-  const config = { headers: { 'Authorization': 'Bearer 70143b81dd40a9b011c1462010fd99ccce308a7f' } }
+  const config = { headers: { 'Authorization': `Bearer ${process.env.REACT_APP_BITLY_KEY}` } }
   const handleSubmit = (e) => {
     e.preventDefault()
     axios.post('https://api-ssl.bitly.com/v4/shorten', { long_url: longUrl }, config )
