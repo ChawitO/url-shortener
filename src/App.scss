@@ -7,6 +7,18 @@
   src: url(./fonts/IBMPlexMono-Medium.ttf) format('truetype');
 }
 
+@font-face {
+  font-family: 'Mulish';
+  font-weight: 400;
+  src: url(./fonts/Mulish-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Mulish';
+  font-weight: 700;
+  src: url(./fonts/Mulish-Bold.ttf) format('truetype');
+}
+
 * {
   box-sizing: border-box;
 }
@@ -15,81 +27,79 @@ body {
   background-color: cw.$background;
 }
 
-.App {
-  text-align: center;
-  margin: 0 auto;
+h1 {
+  font-family: 'Mulish', sans-serif;
+  color: cw.$text-1;
+  font-size: 32px;
 }
 
 form {
   display: flex;
-  width: 60%
+  height: 50px;
+  width: 100%;
+  font-size: 16px;
 }
 
-form input {
-  height: 50px;
+input[type="text"] {
+  border: none;
+  border-bottom: 3px solid cw.$link;
+  flex-grow: 1;
+  background-color: cw.$background;
+  padding: 0;
+  outline: none;
+  font-family: 'Mulish', sans-serif;
+  color: cw.$text-3;
+}
 
-  &[type="text"] {
-    // background-color: cw.$background;
-    background-color: rgba($color: cw.$background, $alpha: 0.8);
-    font-size: 16px;
-    padding: 0 8px;
-    border: 2px solid cw.$link;
-    border-right: none;
-    width: 100%;
-    outline: none;
+.short-url-container, .short-url-placeholder {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  margin-top: 16px;
+  width: 100%;
+  font-size: 16px;
+
+  div {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    border-bottom: 3px solid cw.$link;
+    font-family: 'Mulish', sans-serif;
     color: cw.$text-3;
   }
-  &[type="submit"] {
-    background-color: cw.$background;
-    border: 2px solid cw.$link;
-    border-radius: 3px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    padding: 0 8px;
-    color: cw.$link;
-    font-family: 'IBM Plex Mono', monospace;
-    font-weight: 500;
-    font-size: 16px;
-
-    transition-duration: 0.2s;
-
-    &:hover {
-      background-color: cw.$link;
-      color: cw.$background;
-    }
-  }
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.short-url-placeholder {
+  visibility: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.btn-url {
+  border: none;
+  border-bottom: 3px solid cw.$link;
+  background-color: cw.$background;
+  padding: 0 8px;
+  color: cw.$link;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 500;
+  margin-left: 16px;
+  cursor: pointer;
+  width: 88px;
+
+  transition-duration: 0.3s;
+
+  &:hover {
+    color: cw.$active-link;
+    border-color: cw.$active-link;
   }
 }
 
 .App-header {
+  margin: 0 auto;
+  padding: 0 32px;
   min-height: 100vh;
+  max-width: 784px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
