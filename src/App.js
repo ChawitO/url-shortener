@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import { useState } from 'react';
 import axios from 'axios';
 
@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <p>URL Shortener with React</p>
         <form onSubmit={handleSubmit}>
           <input type="text" value={longUrl} onChange={(e) => setLongUrl(e.target.value) } />
@@ -28,8 +28,10 @@ function App() {
           Original URL:
           <a href={longUrl} target="_blank" rel="noopener noreferrer"> {longUrl}</a>
         </p>
-        <div>{shortUrl}</div>
-        <button onClick={copyToClipboard}>Copy URL</button>
+        {shortUrl &&<div>
+          <div>{shortUrl}</div>
+          <button onClick={copyToClipboard}>Copy URL</button>
+        </div>}
       </header>
     </div>
   );
