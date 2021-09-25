@@ -1,22 +1,23 @@
-@use 'scss/normalize';
-@use 'scss/cw-visual-idenitity' as cw;
+@use 'normalize';
+@use 'cw-visual-idenitity' as cw;
 
 @font-face {
   font-family: 'IBM Plex Mono';
   font-weight: 500;
-  src: url(./fonts/IBMPlexMono-Medium.ttf) format('truetype');
+  // src: url(./fonts/IBMPlexMono-Medium.ttf) format('truetype');
+  src: url(../fonts/IBMPlexMono-Medium.ttf) format('truetype');
 }
 
 @font-face {
   font-family: 'Mulish';
   font-weight: 400;
-  src: url(./fonts/Mulish-Regular.ttf) format('truetype');
+  src: url(../fonts/Mulish-Regular.ttf) format('truetype');
 }
 
 @font-face {
   font-family: 'Mulish';
   font-weight: 700;
-  src: url(./fonts/Mulish-Bold.ttf) format('truetype');
+  src: url(../fonts/Mulish-Bold.ttf) format('truetype');
 }
 
 * {
@@ -43,15 +44,15 @@ body {
 }
 
 main {
-  margin: 0 auto;
-  padding: 0 32px;
-  width: 100%;
-  max-width: 784px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   flex-grow: 1;
+  margin: 0 auto;
+  padding: 0 32px;
+  width: 100%;
+  max-width: 784px;
 }
 
 h1 {
@@ -60,39 +61,34 @@ h1 {
   font-size: 32px;
 }
 
-form {
+form,
+.short-url-container,
+.short-url-placeholder {
   display: flex;
   height: 50px;
   width: 100%;
   font-size: 16px;
 }
 
-input[type="text"] {
+.text-box {
   border: none;
   border-bottom: 3px solid cw.$link;
-  flex-grow: 1;
-  background-color: cw.$background;
   padding: 0;
+  background-color: cw.$background;
+  flex-grow: 1;
   outline: none;
   font-family: 'Mulish', sans-serif;
   color: cw.$text-3;
 }
 
-.short-url-container, .short-url-placeholder {
-  display: flex;
+.short-url-container,
+.short-url-placeholder {
   justify-content: space-between;
-  height: 50px;
   margin-top: 16px;
-  width: 100%;
-  font-size: 16px;
 
   .short-url {
     display: flex;
     align-items: center;
-    flex-grow: 1;
-    border-bottom: 3px solid cw.$link;
-    font-family: 'Mulish', sans-serif;
-    color: cw.$text-3;
   }
 }
 
@@ -100,17 +96,17 @@ input[type="text"] {
   visibility: hidden;
 }
 
-.btn-url {
+.btn {
   border: none;
   border-bottom: 3px solid cw.$link;
   background-color: cw.$background;
+  margin-left: 16px;
   padding: 0 8px;
-  color: cw.$link;
+  width: 88px;
   font-family: 'IBM Plex Mono', monospace;
   font-weight: 500;
-  margin-left: 16px;
+  color: cw.$link;
   cursor: pointer;
-  width: 88px;
 
   transition-duration: 0.3s;
 
