@@ -9,7 +9,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post('/api/shorten', { longUrl } )
+    axios.post('https://bitly-proxy-server.herokuapp.com/api/shorten', { longUrl } )
       .then(res => setShortUrl(res.data))
       .catch(err => console.log(err))
   }
