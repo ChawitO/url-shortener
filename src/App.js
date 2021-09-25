@@ -1,4 +1,4 @@
-// import logo from './logo.svg';
+import logo from './cw-logo.svg';
 import './App.scss';
 import { useState } from 'react';
 import axios from 'axios';
@@ -17,19 +17,23 @@ function App() {
 
   return (
     <div className="App">
-      <div className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+      <header>
+        <a href="https://github.com/ChawitO/url-shortener" target="_blank" rel="noopener noreferrer">
+          <img src={logo} className="logo" alt="cw logo" />
+        </a>
+      </header>
+      <main>
         <h1>Link Shortener with React</h1>
         <form onSubmit={handleSubmit}>
           <input type="text" value={longUrl} placeholder="Paste the long url here" onChange={(e) => setLongUrl(e.target.value) } />
           <input className="btn-url" type="submit" value="Shorten" />
         </form>
-        {shortUrl &&<div className="short-url-container">
-          <div>{shortUrl}</div>
+        {shortUrl && <div className="short-url-container">
+          <div className="short-url">{shortUrl}</div>
           <button className="btn-url" onClick={copyToClipboard}>Copy</button>
         </div>}
         {!shortUrl && <div className="short-url-placeholder"></div>}
-      </div>
+      </main>
     </div>
   );
 }
